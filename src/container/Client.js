@@ -28,7 +28,7 @@ class Client extends Component{
     }
     render(){
         if(this.state.showContent){
-            return (<TakeOderDay />)
+            return (<TakeOderDay name={this.state.input}/>)
         }else{
             return (
                 <div>

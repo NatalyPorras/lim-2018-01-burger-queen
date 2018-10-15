@@ -1,3 +1,9 @@
+@media (min-width: 768px){
+    .container {
+        max-width: 820px;
+    }
+}
+
 .section3{
     background-color: #748CAB;
     padding: 15px 0;

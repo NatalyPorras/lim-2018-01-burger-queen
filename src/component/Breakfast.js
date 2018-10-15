@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import data from '../data/data'
+import data from '../data/data';
+import Button from './Button'
 import './Breakfast.css'
 class Breakfast extends Component{
 
@@ -9,12 +10,7 @@ class Breakfast extends Component{
                 { data.map(aliment =>{
                     return aliment.Breakfast.map((breakfast,i)=>{                             
                         return (
-                                <div  key={i} className="card text-center">
-                                    <div className="card-body">
-                                    <h5 className="card-title">{breakfast.name}</h5>
-                                    <p className="card-text">S/ {breakfast.price}</p>
-                                    </div>
-                                </div>
+                            <Button key={`break${i}`} name={breakfast.name} price={breakfast.price} addHandleTakeOrder={this.props.addHandleTakeOrder}/>
                         )
                         })
                     })

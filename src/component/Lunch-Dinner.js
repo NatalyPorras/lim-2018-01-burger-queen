@@ -1,36 +1,23 @@
 import React, { Component } from 'react';
-import data from '../data/data'
-import './Breakfast.css'
+import data from '../data/data';
+import Button from './Button';
+import './LunchDinner.css'
 class LunchDinner extends Component{
 
-    handleGetValues(e){
-        console.log(e.target.txt);
-        
-    }
     showDataH(){
         return data.map(aliment =>{
-            console.log(aliment.Lunchdinner);
-                                //  return lunchDinner.map((hamburguesas,i)=>{
                              return aliment.Lunchdinner.hamburguesas.map((hamburguesas,i)=>{
                                 return (
-                                    <div  key={`h${i}`} className="card text-center" txt='holi' onClick={this.handleGetValues.bind(this)}>
-                                        {hamburguesas.name} {hamburguesas.type}
-                                        S/ {hamburguesas.price}
-                                    </div>
+                                        <Button key={`h${i}`} name={hamburguesas.name} price={hamburguesas.price} addHandleTakeOrder={this.props.addHandleTakeOrder}/>
                                 )              
                             }) 
-                    })
+                        })
     }
     showDataA(){
         return  data.map(aliment =>{
             return aliment.Lunchdinner.acompañamientos.map((acompañamiento,i)=>{
                 return (
-                    <div  key={`a${i}`} className="card text-center">
-                        <div className="card-body">
-                        <h5 className="card-title">{acompañamiento.name}</h5>
-                        <p className="card-text">S/ {acompañamiento.price}</p>
-                        </div>
-                    </div>
+                    <Button key={`a${i}`} name={acompañamiento.name} price={acompañamiento.price} addHandleTakeOrder={this.props.addHandleTakeOrder}/>
             )              
                 })
         })
@@ -39,12 +26,7 @@ class LunchDinner extends Component{
         return data.map(aliment =>{
             return aliment.Lunchdinner.bebidas.map((bebidas,i)=>{
                     return (
-                        <div  key={`b${i}`} className="card text-center">
-                            <div className="card-body">
-                            <h5 className="card-title">{bebidas.name} {bebidas.length}</h5>
-                            <p className="card-text">S/ {bebidas.price}</p>
-                            </div>
-                        </div>
+                        <Button key={`h${i}`} name={bebidas.name} price={bebidas.price} addHandleTakeOrder={this.props.addHandleTakeOrder}/>
                 )              
                     })                                                             
         })
@@ -53,19 +35,19 @@ class LunchDinner extends Component{
     render(){
 
         return (
-            <div>
-                <div>
-                    <div className="card-columns">
+            <div className="container">
+                <div className="row fila1 mr-3 ml-3 mt-1 mb-1">
+                    <div className="col">
                     {this.showDataH()}
                     </div>
                 </div>
-                <div>
-                    <div className="card-columns">
+                <div className="row fila2 mr-3 ml-3 mt-1 mb-1">
+                    <div className="col">
                     {this.showDataA()}
                     </div>
                 </div>
-                <div>
-                    <div className="card-columns">
+                <div className="row fila3 mr-3 ml-3 mt-1 mb-1">
+                    <div className="col">
                     {this.showDataB()}
                     </div>
                 </div>

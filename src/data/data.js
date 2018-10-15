@@ -21,13 +21,11 @@ const data = [
     "Lunchdinner": {
       "hamburguesas": [
         {
-          "name": "Hamburguesa",
-          "type": "Simple",
+          "name": "Hamburguesa - Simple",
           "price": 10
         },
         {
-          "name": "Hamburguesa",
-          "type": "Doble",
+          "name": "Hamburguesa - Doble",
           "price": 15
         }
       ],
@@ -42,23 +40,19 @@ const data = [
       ],
       "bebidas": [
         {
-          "name": "Agua",
-          "length": "500ml",
+          "name": "Agua - 500ml",
           "price": 5
         },
         {
-          "name": "Agua",
-          "length": "750ml",
+          "name": "Agua - 750ml",
           "price": 8
         },
         {
-          "name": "Gaseosa",
-          "length": "500ml",
+          "name": "Gaseosa - 500ml",
           "price": 8
         },
         {
-          "name": "Gaseosa",
-          "length": "750ml",
+          "name": "Gaseosa - 750ml",
           "price": 10
         }
       ]

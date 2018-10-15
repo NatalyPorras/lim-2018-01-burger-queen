@@ -3,89 +3,72 @@ import data from '../data/data'
 import './Breakfast.css'
 class LunchDinner extends Component{
 
+    handleGetValues(e){
+        console.log(e.target.txt);
+        
+    }
     showDataH(){
-        return (
-            <div className="card-columns">
-                 { data.map(aliment =>{
-                    return Object.values(aliment.Lunchdinner).map((lunchDinner,i)=>{                                                     
-                        //  return lunchDinner.map((hamburguesas,i)=>{
-                         if(i===0){
-                             return lunchDinner.map((hamburguesas,i)=>{
+        return data.map(aliment =>{
+            console.log(aliment.Lunchdinner);
+                                //  return lunchDinner.map((hamburguesas,i)=>{
+                             return aliment.Lunchdinner.hamburguesas.map((hamburguesas,i)=>{
                                 return (
-                                    <div  key={`h${i}`} className="card text-center">
-                                        <div className="card-body">
-                                        <h5 className="card-title">{hamburguesas.name}</h5>
-                                        <p className="card-text">{hamburguesas.price}</p>
-                                        </div>
+                                    <div  key={`h${i}`} className="card text-center" txt='holi' onClick={this.handleGetValues.bind(this)}>
+                                        {hamburguesas.name} {hamburguesas.type}
+                                        S/ {hamburguesas.price}
                                     </div>
-                            )              
-                             })
-                                       
-                    }
-                        
-                        })
+                                )              
+                            }) 
                     })
-                } 
-            </div>
-        )
     }
     showDataA(){
-        return (
-            <div className="card-columns">
-                 { data.map(aliment =>{
-                    return Object.values(aliment.Lunchdinner).map((lunchDinner,i)=>{                                                     
-                        //  return lunchDinner.map((hamburguesas,i)=>{
-                         if(i===1){
-                             return lunchDinner.map((acompañamiento,i)=>{
-                                return (
-                                    <div  key={`a${i}`} className="card text-center">
-                                        <div className="card-body">
-                                        <h5 className="card-title">{acompañamiento.name}</h5>
-                                        <p className="card-text">{acompañamiento.price}</p>
-                                        </div>
-                                    </div>
-                            )              
-                             })
-                                       
-                        }
-                        })
-                    })
-                } 
-            </div>
-        )
+        return  data.map(aliment =>{
+            return aliment.Lunchdinner.acompañamientos.map((acompañamiento,i)=>{
+                return (
+                    <div  key={`a${i}`} className="card text-center">
+                        <div className="card-body">
+                        <h5 className="card-title">{acompañamiento.name}</h5>
+                        <p className="card-text">S/ {acompañamiento.price}</p>
+                        </div>
+                    </div>
+            )              
+                })
+        })
     }
     showDataB(){
-        return (
-            <div className="card-columns">
-                 { data.map(aliment =>{
-                    return Object.values(aliment.Lunchdinner).map((lunchDinner,i)=>{                                                     
-                        //  return lunchDinner.map((hamburguesas,i)=>{
-                         if(i===2){
-                             return lunchDinner.map((bebidas,i)=>{
-                                return (
-                                    <div  key={`b${i}`} className="card text-center">
-                                        <div className="card-body">
-                                        <h5 className="card-title">{bebidas.name}</h5>
-                                        <p className="card-text">{bebidas.price}</p>
-                                        </div>
-                                    </div>
-                            )              
-                             })                                       
-                        }                        
-                    })
-                    })
-                } 
-            </div>
-        )
+        return data.map(aliment =>{
+            return aliment.Lunchdinner.bebidas.map((bebidas,i)=>{
+                    return (
+                        <div  key={`b${i}`} className="card text-center">
+                            <div className="card-body">
+                            <h5 className="card-title">{bebidas.name} {bebidas.length}</h5>
+                            <p className="card-text">S/ {bebidas.price}</p>
+                            </div>
+                        </div>
+                )              
+                    })                                                             
+        })
     }
 
     render(){
 
         return (
             <div>
-                {this.showDataH()}
-                {this.showDataA()}
-                {this.showDataB()}
+                <div>
+                    <div className="card-columns">
+                    {this.showDataH()}
+                    </div>
+                </div>
+                <div>
+                    <div className="card-columns">
+                    {this.showDataA()}
+                    </div>
+                </div>
+                <div>
+                    <div className="card-columns">
+                    {this.showDataB()}
+                    </div>
+                </div>
             </div>
         )   
     }

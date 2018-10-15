@@ -27,7 +27,7 @@ class TakeOrderDay extends Component{
                 </section>
                 <div className="section4">
                     <div className="container">
-                        <div className="row text-center">
+                        <div className="row titleOrder text-center">
                             <div className="col-12">
                                 <p>
                                       Tomar Pedido

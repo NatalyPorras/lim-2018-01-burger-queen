@@ -11,3 +11,10 @@
 .section4 .orders{
     border: 1px solid #4D5057
 }
+
+.section4 .titleOrder{
+    font-size: 40px;
+}
+.section4 .titleOrder p{
+    margin: 10px 0;
+}

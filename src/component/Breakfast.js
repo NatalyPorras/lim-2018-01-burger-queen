@@ -12,7 +12,7 @@ class Breakfast extends Component{
                                 <div  key={i} className="card text-center">
                                     <div className="card-body">
                                     <h5 className="card-title">{breakfast.name}</h5>
-                                    <p className="card-text">{breakfast.price}</p>
+                                    <p className="card-text">S/ {breakfast.price}</p>
                                     </div>
                                 </div>
                         )

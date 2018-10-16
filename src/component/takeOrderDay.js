@@ -21,7 +21,7 @@ class TakeOrderDay extends Component{
 
     calculateOrder = () => {
         let {order} = this.state;
-        let total= 0;
+        let total = 0;
         if(order !== []){
             order.map((order) =>{
                 total += order.price
@@ -29,8 +29,17 @@ class TakeOrderDay extends Component{
             })
             console.log(total);
             
-            return (<div>Total: {total}</div>)
+            return (
+                <p>Total: {total}</p>
+            )
         }
+    }
+
+    handleGetPosicionDelete=(e)=>{
+        const {order} = this.state;
+        const posicion=e.target.id;
+        order.splice(posicion,1)
+        this.setState({order})
     }
 
     render(){
@@ -67,7 +76,7 @@ class TakeOrderDay extends Component{
                                     <div key={i}>
                                         <span> {order.name} </span>
                                         <span> {order.price} </span>
-                                        <i className="fas fa-trash-alt"></i>
+                                        <i className="fas fa-trash-alt" id={i} onClick={this.handleGetPosicionDelete}></i>
                                     </div>
                                 )                                   
                                 })

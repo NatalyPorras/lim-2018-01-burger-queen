@@ -1,19 +1,11 @@
-@media (min-width: 576px){
-    .card-columns {
-        column-count: 2;
-        margin: 5px 0;
-    }
-    .card-body{
-        padding: 0.25rem;
-    }
-    .card-body h5{
-        font-size: 0.60rem;
-    }
-    .card-title{
-        margin-bottom: 0;
-    }
-    .card-text{
-        margin-bottom: 0;
-        font-size: 0.70rem;
-    }
+.showFoods h5{
+    color:#6A8093;
+    margin-bottom: 0rem;
 }
+
+
+hr { 
+    border: 0; 
+    height: 1px; 
+    background-image: linear-gradient(to left, #f0f0f0, #8c8b8b, #f0f0f0);
+  }

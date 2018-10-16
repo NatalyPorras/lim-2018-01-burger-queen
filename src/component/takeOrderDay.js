@@ -8,6 +8,7 @@ class TakeOrderDay extends Component{
         super()
         this.state={
             order:[],
+            showHide:false,
         }
     }
     addHandleTakeOrder = (name,price) =>{
@@ -28,7 +29,8 @@ class TakeOrderDay extends Component{
                 return total
             })
             console.log(total);
-            return(<span>{total}</span>)
+            return(
+                <span>{total}</span>)
         }
 
     }
@@ -36,8 +38,10 @@ class TakeOrderDay extends Component{
     handleGetPosicionDelete=(e)=>{
         const {order} = this.state;
         const posicion=e.target.id;
-        delete order[posicion]
-        // order.splice(posicion,1)
+        // delete order[posicion]
+        order.splice(posicion,1)
+        console.log(order);
+        
         this.setState({order})
     }
 
@@ -46,7 +50,7 @@ class TakeOrderDay extends Component{
             <div className="main"> 
                 <HeaderOrder name={this.props.name}/>
                 <div className="section4">
-                    <div className="container">
+                    <div className="container takeOrder">
                         <div className="row titleOrder text-center">
                             <div className="col-12">
                                 <p>
@@ -54,8 +58,8 @@ class TakeOrderDay extends Component{
                                 </p>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-7 orders">
+                        <div className="row filaContent">
+                            <div className="col-8 orders">
                                 <nav>
                                     <div className="nav nav-tabs" id="nav-tab" role="tablist">
                                         <a className="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Desayuno</a>
@@ -64,10 +68,10 @@ class TakeOrderDay extends Component{
                                 </nav>
                                 <div className="tab-content" id="nav-tabContent">
                                         <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><Breakfast addHandleTakeOrder={this.addHandleTakeOrder} /></div>
-                                        <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><LunchDinner addHandleTakeOrder={this.addHandleTakeOrder}/></div>
+                                          <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><LunchDinner addHandleTakeOrder={this.addHandleTakeOrder}/></div>
                                 </div>
                             </div>
-                            <div className="col-5">
+                            <div className="col-4">
                                 <div>
                                     {
                                         this.state.order.map((order ,i) =>{
@@ -81,7 +85,11 @@ class TakeOrderDay extends Component{
                                         })
                                     }
                                 </div>                            
-                                <div>Total: S/ {this.calculateOrder()}</div>
+                                   <div> 
+                                        <p>Total: S/ {this.calculateOrder()}</p>
+                                        <button className = {(this.state.order.length > 0)? "hiden1" : "hiden"}>Enviar a Cocina</button>
+                                       
+                                   </div>
                             </div>
 
                         </div>

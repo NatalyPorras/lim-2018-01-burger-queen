@@ -1,21 +1,30 @@
 @media (min-width: 768px){
-    .container {
-        max-width: 820px;
+    .container{
+        max-width: 900px;
     }
 }
 
+.hiden{
+    display: none;
+}
+.hiden1{
+    display: block;
+}
 .section3{
-    background-color: #748CAB;
+    background-color: #00687A;
     padding: 15px 0;
 }
 
 .section3 h4{
-    font-size: 15px;
+    font-size: 25px;
     margin-top: .4rem;
+    color: #F2F2F2;
 }
 
 .section4 .orders{
-    border: 1px solid #4D5057
+    border: 0.1px solid #4D5057;
+    box-shadow: 2px 2px 2px 2px #6A8093;
+    padding: 20px 5px;
 }
 
 .section4 .titleOrder{

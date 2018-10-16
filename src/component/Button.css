@@ -1,3 +1,12 @@
 button{
     font-size: 15px;
 }
+.btn-sm{
+    border-radius: .1rem;
+}
+
+.btn-primary {
+    color: #F2F2F2;
+    background-color: #135D84;
+    border-color: #6A8093;
+}

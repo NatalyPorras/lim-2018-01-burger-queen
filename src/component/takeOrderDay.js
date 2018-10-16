@@ -4,11 +4,10 @@ import LunchDinner from './Lunch-Dinner';
 import HeaderOrder from './HeaaderOrder';
 import './TakeOrderDay.css'
 class TakeOrderDay extends Component{
-    constructor(){
+    constructor(){  
         super()
         this.state={
             order:[],
-            total:0
         }
     }
     addHandleTakeOrder = (name,price) =>{
@@ -18,22 +17,9 @@ class TakeOrderDay extends Component{
                 price:price
             })
         this.setState({order})
-        let result = order.reduce((tot, arr) => { 
-        // return the sum with previous value
-         return tot + arr.price;
-        },0);
-        this.setState({
-            total: result
-          });
-
-          if () {
-              
-          } else {
-              
-          }
     }
 
-    calculateOrder = () => {
+    calculateOrder=()=> {
         let {order} = this.state;
         let total = 0;
         if(order !== []){
@@ -42,17 +28,16 @@ class TakeOrderDay extends Component{
                 return total
             })
             console.log(total);
-            
-            return (
-                <p>Total: {total}</p>
-            )
+            return(<span>{total}</span>)
         }
+
     }
 
     handleGetPosicionDelete=(e)=>{
         const {order} = this.state;
         const posicion=e.target.id;
-        order.splice(posicion,1)
+        delete order[posicion]
+        // order.splice(posicion,1)
         this.setState({order})
     }
 
@@ -83,20 +68,20 @@ class TakeOrderDay extends Component{
                                 </div>
                             </div>
                             <div className="col-5">
-
-                            {
-                                this.state.order.map((order ,i) =>{
-                                return (
-                                    <div key={i}>
-                                        <span> {order.name} </span>
-                                        <span> {order.price} </span>
-                                        <i className="fas fa-trash-alt" id={i} onClick={this.handleGetPosicionDelete}></i>
-                                    </div>
-                                )                                   
-                                })
-                            }
-                            
-                            <div>{this.calculateOrder()}</div>
+                                <div>
+                                    {
+                                        this.state.order.map((order ,i) =>{
+                                        return (
+                                            <div key={i}>
+                                                <span> {order.name} </span>
+                                                <span> {order.price} </span>
+                                                <i className="fas fa-trash-alt" id={i} onClick={this.handleGetPosicionDelete}></i>
+                                            </div>
+                                        )                                   
+                                        })
+                                    }
+                                </div>                            
+                                <div>Total: S/ {this.calculateOrder()}</div>
                             </div>
 
                         </div>

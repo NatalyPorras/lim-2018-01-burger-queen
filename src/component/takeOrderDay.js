@@ -8,6 +8,7 @@ class TakeOrderDay extends Component{
         super()
         this.state={
             order:[],
+            total:0
         }
     }
     addHandleTakeOrder = (name,price) =>{
@@ -17,6 +18,19 @@ class TakeOrderDay extends Component{
                 price:price
             })
         this.setState({order})
+        let result = order.reduce((tot, arr) => { 
+        // return the sum with previous value
+         return tot + arr.price;
+        },0);
+        this.setState({
+            total: result
+          });
+
+          if () {
+              
+          } else {
+              
+          }
     }
 
     calculateOrder = () => {

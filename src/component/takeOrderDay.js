@@ -8,7 +8,6 @@ class TakeOrderDay extends Component{
         super()
         this.state={
             order:[],
-            total:0
         }
     }
     addHandleTakeOrder = (name,price) =>{
@@ -18,22 +17,22 @@ class TakeOrderDay extends Component{
                 price:price
             })
         this.setState({order})
-        let result = order.reduce((tot, arr) => { 
-        // return the sum with previous value
-         return tot + arr.price;
-        },0);
-        this.setState({
-            total: result
-          });
     }
 
     calculateOrder = () => {
-        let {order,total} = this.state;
-        let res = order.map(order =>{
-               return total += order.price
-        })
-        this.setState({total:res})
+        let {order} = this.state;
+        let total= 0;
+        if(order !== []){
+            order.map((order) =>{
+                total += order.price
+                return total
+            })
+            console.log(total);
+            
+            return (<div>Total: {total}</div>)
+        }
     }
+
     render(){
         return (    
             <div className="main"> 
@@ -61,18 +60,20 @@ class TakeOrderDay extends Component{
                                 </div>
                             </div>
                             <div className="col-5">
+
                             {
                                 this.state.order.map((order ,i) =>{
                                 return (
                                     <div key={i}>
                                         <span> {order.name} </span>
                                         <span> {order.price} </span>
+                                        <i className="fas fa-trash-alt"></i>
                                     </div>
                                 )                                   
                                 })
                             }
                             
-                            <h5>Total :{this.state.total}</h5>
+                            <div>{this.calculateOrder()}</div>
                             </div>
 
                         </div>

@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import Breakfast from './Breakfast';
 import LunchDinner from './Lunch-Dinner';
 import HeaderOrder from './HeaaderOrder';
+import {db} from '../config/config'
 import './TakeOrderDay.css'
 class TakeOrderDay extends Component{
     constructor(){  
         super()
         this.state={
+            nameClient:'',
             order:[],
+            total:0,
             showHide:false,
         }
     }
@@ -45,10 +48,23 @@ class TakeOrderDay extends Component{
         this.setState({order})
     }
 
+    handleSendData=()=>{
+      db.settings ({ 
+    timestampsInSnapshots: true 
+  }); 
+ 
+        db.collection('pedido').add({
+          fullname: this.state.nameClient,
+          order:this.state.order,
+          Total:this.state.total,
+        });  
+
+    }
+
     render(){
         return (    
             <div className="main"> 
-                <HeaderOrder name={this.props.name}/>
+                <HeaderOrder/>
                 <div className="section4">
                     <div className="container takeOrder">
                         <div className="row titleOrder text-center">
@@ -87,7 +103,7 @@ class TakeOrderDay extends Component{
                                                           
                                    <div className="priceTotal ml-2 mr-1 mt-2 mb-1"> 
                                         <p>Total: S/ {this.calculateOrder()}</p>
-                                        <button className = {(this.state.order.length > 0)? "hiden1 btn btn-outline-light mb-2 ml-3" : "hiden"}>Enviar a Cocina</button>
+                                        <button className = {(this.state.order.length > 0)? "hiden1 btn btn-outline-light mb-2 ml-3" : "hiden"} onClick={this.handleSendData}>Enviar a Cocina</button>
                                    </div>
                                 </div>  
                             </div>

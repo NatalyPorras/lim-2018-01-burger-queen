@@ -1,4 +1,6 @@
-import firebase from 'firebase'
+const firebase = require("firebase");
+require("firebase/firestore");
+
 const config = {
     apiKey: "AIzaSyAzJ1ZVbgeyav_4BOFCJ_8EYFLY_er8K2I",
     authDomain: "burguer-queen-40482.firebaseapp.com",
@@ -9,4 +11,4 @@ const config = {
   };
   firebase.initializeApp(config);
 
-  export default firebase;
+  export const db= firebase.firestore();

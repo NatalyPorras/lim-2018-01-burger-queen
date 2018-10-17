@@ -9,6 +9,7 @@
 }
 .hiden1{
     display: block;
+    
 }
 .section3{
     background-color: #00687A;
@@ -22,6 +23,7 @@
 }
 
 .section4 .orders{
+    background-color: #fff;
     border: 0.1px solid #4D5057;
     box-shadow: 2px 2px 2px 2px #6A8093;
     padding: 20px 5px;
@@ -32,4 +34,31 @@
 }
 .section4 .titleOrder p{
     margin: 10px 0;
+}
+.filaContent{
+    margin: 0;
+}
+
+.filaContent .orderList{
+    background-color: #6A8093;
+    border:1px solid #6A8093;
+    padding: 2px;
+}
+
+.listFood .food{
+    display: inline-block;
+    font-size: 13px;
+    color:#fff;
+}
+.listFood  .name{
+    width: 70%;
+}
+.listFood  .price{
+    width: 15%;
+}
+.listFood  .icono{
+    width: 15%;
+}
+.orderList .priceTotal{
+    color:#fff; 
 }

@@ -1,8 +1,7 @@
-button{
-    font-size: 15px;
-}
+
 .btn-sm{
     border-radius: .1rem;
+    font-size: .7rem; 
 }
 
 .btn-primary {

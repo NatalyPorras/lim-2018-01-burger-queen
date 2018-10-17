@@ -5,7 +5,7 @@ import './LunchDinner.css'
 class LunchDinner extends Component{
 
     showDataH(){
-        return(<div className="">
+        return(<div>
             <h5>Hamburguesa</h5>
             <div className="pl-5">
                 {
@@ -22,7 +22,7 @@ class LunchDinner extends Component{
 
     }
     showDataA(){
-        return(<div className="col">
+        return(<div>
             <h5>Acompañamientos</h5>
             <div className="pl-5">
                 {
@@ -39,7 +39,7 @@ class LunchDinner extends Component{
         
     }
     showDataB(){
-        return(<div className="col">
+        return(<div>
                     <h5>Bebidas</h5>
             <div className="pl-5">
                 {data.map(aliment =>{
@@ -57,7 +57,7 @@ class LunchDinner extends Component{
     render(){
 
         return (
-            <div className="showFoods pt-3 pb-3 pl-3 pr-3">
+            <div className="showFoods pt-1 pb-1 pl-3 pr-1">
                 {this.showDataH()}
                 <hr />
                 {this.showDataA()}

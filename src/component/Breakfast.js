@@ -82,7 +82,7 @@ class Breakfast extends Component{
     render(){
 
         return (
-            <div className="showFoods pt-3 pb-3 pl-3 pr-3">
+            <div className="showFoods pt-1 pb-1 pl-3 pr-1">
                 {this.showDataCafe()}
                 <hr />
                 {this.showDataJugo()}

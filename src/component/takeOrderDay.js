@@ -59,7 +59,7 @@ class TakeOrderDay extends Component{
                             </div>
                         </div>
                         <div className="row filaContent">
-                            <div className="col-8 orders">
+                            <div className="col-7 orders">
                                 <nav>
                                     <div className="nav nav-tabs" id="nav-tab" role="tablist">
                                         <a className="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Desayuno</a>
@@ -71,25 +71,25 @@ class TakeOrderDay extends Component{
                                           <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><LunchDinner addHandleTakeOrder={this.addHandleTakeOrder}/></div>
                                 </div>
                             </div>
-                            <div className="col-4">
-                                <div>
+                            <div className="col-5 orderListContent">
+                                <div className="orderList">
                                     {
                                         this.state.order.map((order ,i) =>{
                                         return (
-                                            <div key={i}>
-                                                <span> {order.name} </span>
-                                                <span> {order.price} </span>
-                                                <i className="fas fa-trash-alt" id={i} onClick={this.handleGetPosicionDelete}></i>
+                                            <div key={i} className="listFood">
+                                                <div className="food name pl-2"> {order.name} </div>
+                                                <div className="food price text-center"> {order.price} </div>
+                                                <div className="food icono text-center"><i className="fas fa-trash-alt" id={i} onClick={this.handleGetPosicionDelete}></i></div>
                                             </div>
                                         )                                   
                                         })
                                     }
-                                </div>                            
-                                   <div> 
+                                                          
+                                   <div className="priceTotal ml-2 mr-1 mt-2 mb-1"> 
                                         <p>Total: S/ {this.calculateOrder()}</p>
-                                        <button className = {(this.state.order.length > 0)? "hiden1" : "hiden"}>Enviar a Cocina</button>
-                                       
+                                        <button className = {(this.state.order.length > 0)? "hiden1 btn btn-outline-light mb-2 ml-3" : "hiden"}>Enviar a Cocina</button>
                                    </div>
+                                </div>  
                             </div>
 
                         </div>

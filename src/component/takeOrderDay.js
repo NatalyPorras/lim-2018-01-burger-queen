@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Breakfast from './Breakfast';
 import LunchDinner from './Lunch-Dinner';
 import HeaderOrder from './HeaaderOrder';
-import {db} from '../config/firestore'
 import './TakeOrderDay.css'
 class TakeOrderDay extends Component{
     constructor(){  
@@ -50,7 +49,7 @@ class TakeOrderDay extends Component{
 
     handleSendData=()=>{
 
-        db.collection('pedido').add({
+        window.firebase.firestore().collection('pedido').add({
           fullname: this.state.nameClient,
           order:this.state.order,
           Total:this.state.total,

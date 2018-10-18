@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://natalyporras.github.io/lim-2018-01-burger-queen/",
   "dependencies": {
+    "@firebase/firestore": "^0.8.4",
     "antd": "^3.10.1",
     "firebase": "^5.5.4",
     "react": "^16.5.2",

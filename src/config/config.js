@@ -1,5 +1,4 @@
 const firebase = require("firebase");
-require("firebase/firestore");
 
 const config = {
     apiKey: "AIzaSyAzJ1ZVbgeyav_4BOFCJ_8EYFLY_er8K2I",
@@ -10,5 +9,7 @@ const config = {
     messagingSenderId: "529739000036"
   };
   firebase.initializeApp(config);
+  const database = firebase.database();
 
-  export const db= firebase.firestore();
+  export {firebase,database}
+  

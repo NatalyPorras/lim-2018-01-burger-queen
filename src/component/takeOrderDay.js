@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Breakfast from './Breakfast';
 import LunchDinner from './Lunch-Dinner';
 import HeaderOrder from './HeaaderOrder';
-import {db} from '../config/config'
+import {db} from '../config/firestore'
 import './TakeOrderDay.css'
 class TakeOrderDay extends Component{
     constructor(){  
@@ -49,10 +49,7 @@ class TakeOrderDay extends Component{
     }
 
     handleSendData=()=>{
-      db.settings ({ 
-    timestampsInSnapshots: true 
-  }); 
- 
+
         db.collection('pedido').add({
           fullname: this.state.nameClient,
           order:this.state.order,

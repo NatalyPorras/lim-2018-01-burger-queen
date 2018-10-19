@@ -7,10 +7,10 @@ class TakeOrderDay extends Component{
     constructor(){  
         super()
         this.state={
-            nameClient:'',
             order:[],
             total:0,
             showHide:false,
+            name:''
         }
     }
     addHandleTakeOrder = (name,price) =>{
@@ -45,31 +45,41 @@ class TakeOrderDay extends Component{
         this.setState({order})
     }
 
+    handleInputName =(name) => {
+        console.log(name);
+        this.setState({name})
+    }
+
     handleSendData=()=>{
-        const {order} = this.state
-          window.firebase.firestore().collection('pedido').add({
-          fullname: this.state.nameClient,
-          order:this.state.order,
-          Total:this.state.total,
-        });  
-        order.splice(0,this.state.order.length)
-        console.log(order);
-        
-        this.setState({order})
+        const {order,name} = this.state
+        if(name !== ''){
+            window.firebase.firestore().collection('pedido').add({
+                fullname: name,
+                order:this.state.order,
+                Total:this.state.total,
+              });  
+              order.splice(0,this.state.order.length)   
+              name.value=''
+              this.setState({
+                order:order,
+                name:name
+                })
+      
+        }else{
+            alert('Ingresa nombre del cliente')
+        }
 
     }
 
     render(){
         return (    
             <div className="main"> 
-                <HeaderOrder/>
+                <HeaderOrder handleInputName={this.handleInputName} />
                 <div className="section4">
                     <div className="container takeOrder">
                         <div className="row titleOrder text-center">
                             <div className="col-12">
-                                <p>
-                                      Tomar Pedido
-                                </p>
+                                <p> Tomar Pedido </p>
                             </div>
                         </div>
                         <div className="row filaContent">

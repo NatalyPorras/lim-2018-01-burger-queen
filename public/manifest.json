@@ -2,17 +2,104 @@
   "short_name": "React App",
   "name": "Create React App Sample",
   "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "192x192",
-      "type": "image/x-icon"
-    }
+
+      {
+          "src": "./images/607f54cc-78e4-0f26-a544-9f9c12aea36f.webPlatform.png",
+          "sizes": "44x44",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/0bdc41a5-e207-b69f-ee4b-dd86642e573b.webPlatform.png",
+          "sizes": "48x48",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/cb1e110a-ce46-15e8-809e-85be6b4108e5.webPlatform.png",
+          "sizes": "1240x600",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/11b386f4-5141-aef0-76a3-1626cba72ca4.webPlatform.png",
+          "sizes": "300x300",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/82ed53f0-52ce-e7a7-3f61-caee87a2012d.webPlatform.png",
+          "sizes": "150x150",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/58300907-bd56-836e-9a54-3b99b6aad0ba.webPlatform.png",
+          "sizes": "88x88",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/d42503b8-8f36-ca73-d68b-3652d8deeb89.webPlatform.png",
+          "sizes": "24x24",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/58a0a09b-0c68-e098-4825-2c95c79c37f8.webPlatform.png",
+          "sizes": "50x50",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/62f092b2-b882-fcfd-11e9-7733fa133a66.webPlatform.png",
+          "sizes": "620x300",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/9f5536b0-06d4-04cc-3388-d3c93146192d.webPlatform.png",
+          "sizes": "144x144",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/74202f16-b38c-f37f-1fa5-3ccec4948c73.webPlatform.png",
+          "sizes": "96x96",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/61268530-e04c-fd89-18c5-acf1da86f58e.webPlatform.png",
+          "sizes": "72x72",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/1c6a6c15-854d-4c0a-0d9c-214360f8af8b.webPlatform.png",
+          "sizes": "36x36",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/9597e9d5-e5a6-1afe-3e40-e547ff167417.webPlatform.png",
+          "sizes": "1024x1024",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/cebb600e-38cf-8317-8b96-8edce156c956.webPlatform.png",
+          "sizes": "180x180",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/607f54cc-78e4-0f26-a544-9f9c12aea36f.webPlatform.png",
+          "sizes": "152x152",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/9c72115e-1508-d22c-2b77-d0572a108d73.webPlatform.png",
+          "sizes": "120x120",
+          "type": "image/png"
+      },
+      {
+          "src": "./images/d060fc03-c97b-7084-8ed7-df336634c8f7.webPlatform.png",
+          "sizes": "76x76",
+          "type": "image/png"
+      }
   ],
-  "start_url": "./?utm_source=web_app_manifest",
-  "orientation":"portrait", 
+  "start_url": "https://natalyporras.github.io/lim-2018-01-burger-queen/?utm_source=web_app_manifest",
+  "orientation": "portrait",
   "display": "standalone",
   "theme_color": "#000000",
-  "scope":"./",
+  "scope": "./",
   "background_color": "#ffffff",
-  "lang":"es-MX"
+  "lang": "es-MX",
+  "description": "Aplicativo para solicitudes de comidas en restaurantes"
 }

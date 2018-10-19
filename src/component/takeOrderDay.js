@@ -59,10 +59,8 @@ class TakeOrderDay extends Component{
                 Total:this.state.total,
               });  
               order.splice(0,this.state.order.length)   
-              name.value=''
               this.setState({
                 order:order,
-                name:name
                 })
       
         }else{

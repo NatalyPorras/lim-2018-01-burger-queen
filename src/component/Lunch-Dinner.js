@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import data from '../data/data';
 import Button from './Button';
-import './LunchDinner.css'
 class LunchDinner extends Component{
 
     showDataH(){

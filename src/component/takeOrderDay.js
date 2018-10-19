@@ -30,7 +30,6 @@ class TakeOrderDay extends Component{
                 total += order.price
                 return total
             })
-            console.log(total);
             return(
                 <span>{total}</span>)
         }
@@ -42,18 +41,21 @@ class TakeOrderDay extends Component{
         const posicion=e.target.id;
         // delete order[posicion]
         order.splice(posicion,1)
-        console.log(order);
         
         this.setState({order})
     }
 
     handleSendData=()=>{
-
-        window.firebase.firestore().collection('pedido').add({
+        const {order} = this.state
+          window.firebase.firestore().collection('pedido').add({
           fullname: this.state.nameClient,
           order:this.state.order,
           Total:this.state.total,
         });  
+        order.splice(0,this.state.order.length)
+        console.log(order);
+        
+        this.setState({order})
 
     }
 

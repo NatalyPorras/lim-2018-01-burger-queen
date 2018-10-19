@@ -10,16 +10,11 @@ class Breakfast extends Component{
                 <div className="pl-5">
                     { data.map(aliment =>{
                         return aliment.Breakfast.map((breakfast,i)=>{  
-                            console.log(breakfast.name);
- 
                             if(breakfast.name.substring(4,-1) === 'Café'){
-                                
                                 return (
-                                
                                     <Button key={`break${i}`} name={breakfast.name} price={breakfast.price} addHandleTakeOrder={this.props.addHandleTakeOrder}/>
                                 )
                             }                          
-                           
                             })
                         })
                     }
@@ -35,16 +30,11 @@ class Breakfast extends Component{
                 <div className="pl-5">
                     { data.map(aliment =>{
                         return aliment.Breakfast.map((breakfast,i)=>{  
-                            console.log(breakfast.name);
- 
                             if(breakfast.name.substring(4,-1) === 'Jugo'){
-                                
                                 return (
-                                
                                     <Button key={`break${i}`} name={breakfast.name} price={breakfast.price} addHandleTakeOrder={this.props.addHandleTakeOrder}/>
                                 )
-                            }                          
-                           
+                            }                         
                             })
                         })
                     }
@@ -60,16 +50,11 @@ class Breakfast extends Component{
                 <div className="pl-5">
                     { data.map(aliment =>{
                         return aliment.Breakfast.map((breakfast,i)=>{  
-                            console.log(breakfast.name);
- 
                             if(breakfast.name.substring(8,-1) === 'Sandwich'){
-                                
                                 return (
-                                
                                     <Button key={`break${i}`} name={breakfast.name} price={breakfast.price} addHandleTakeOrder={this.props.addHandleTakeOrder}/>
                                 )
-                            }                          
-                           
+                            }     
                             })
                         })
                     }

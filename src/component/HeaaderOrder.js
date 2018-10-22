@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Header = ({handleInputName}) =>{
+const Header = ({handleInputName,showValueInput}) =>{
     let textInput = React.createRef();
 
     function getHandleInputName(){
-        handleInputName(textInput.current.value)
+        (!showValueInput) ? handleInputName(textInput.current.value) : handleInputName('')
     }
     return (
         <section className="section3">

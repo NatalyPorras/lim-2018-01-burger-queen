@@ -1,9 +1,13 @@
+
 .DS_Store
 node_modules/
 /dist
 .nyc_output/
 coverage/
 package-lock.json
+
+.babelrc
+.webpacj.config.js
 
 /tests/e2e/videos/
 /tests/e2e/screenshots/

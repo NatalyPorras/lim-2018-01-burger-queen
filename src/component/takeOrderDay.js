@@ -10,7 +10,6 @@ class TakeOrderDay extends Component{
             order:[],
             total:0,
             showHide:false,
-            showValueInput:false,
             name:''
         }
     }
@@ -61,7 +60,7 @@ class TakeOrderDay extends Component{
               order.splice(0,this.state.order.length)   
               this.setState({
                 order:order,
-                showValueInput:true
+                name:''
                 })
       
         }else{
@@ -73,7 +72,7 @@ class TakeOrderDay extends Component{
     render(){
         return (    
             <div className="main"> 
-                <HeaderOrder handleInputName={this.handleInputName} showValueInput={this.state.showValueInput} />
+                <HeaderOrder handleInputName={this.handleInputName} name={this.state.name}/>
                 <div className="section4">
                     <div className="container takeOrder">
                         <div className="row titleOrder text-center">

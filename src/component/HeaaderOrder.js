@@ -1,11 +1,11 @@
-import React from 'react';
+    import React from 'react';
 
-const Header = ({handleInputName,showValueInput}) =>{
+const Header = ({handleInputName, name}) =>{
     let textInput = React.createRef();
-
     function getHandleInputName(){
-        (!showValueInput) ? handleInputName(textInput.current.value) : handleInputName('')
+        handleInputName(textInput.current.value)
     }
+
     return (
         <section className="section3">
         <div className="container">
@@ -18,7 +18,7 @@ const Header = ({handleInputName,showValueInput}) =>{
                         <div className="input-group-prepend">
                             <span className="input-group-text" id="inputGroup-sizing-default">Nombre del Cliente:</span>
                         </div>
-                    <input type="text" ref={textInput} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onChange={getHandleInputName} />
+                    <input type="text" ref={textInput} value={name} className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onChange={getHandleInputName} />
                     </div>
                 </div>
                 <div className="col-3">

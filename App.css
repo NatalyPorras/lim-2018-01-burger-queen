@@ -1,0 +1,17 @@
+body{
+  background-color: #F2F2F2
+}
+.section1{
+  background-color: #1D2D44;
+
+}
+.section1 .container {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.section1 .container h3{
+  color: #F0EBD8;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+

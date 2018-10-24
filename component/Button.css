@@ -1,0 +1,11 @@
+
+.btn-sm{
+    border-radius: .1rem;
+    font-size: 12px; 
+}
+
+.btn-primary {
+    color: #F2F2F2;
+    background-color: #135D84;
+    border-color: #6A8093;
+}
